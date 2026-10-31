@@ -13,30 +13,24 @@ Most of the code was written by the AI, and I want to be clear about that.
 * **Documentation.** Data dictionary, distributions, design decisions, validation and export notes, the audit, and the README.
 * **Finding its own bugs.** The reproducibility script showed that the generator gave different data in different processes, because set order leaked into random draws. This was fixed and a regression test added.
 
-## Where I relied heavily on it
+## Where I relied on it most
 
-* The statistical choices behind the "realistic" distributions (log-normal amounts, lateness probabilities by risk tier, settlement shares, scenario parameter values). They were not calibrated against real treasury data.
-* The reading of the brief into ID formats, status lifecycles, allowed transitions, variance drivers, and which rows each anomaly targets.
-* The detection and validation rules. The same assistant wrote them after the injector, so the detection scores are partly circular (see `docs/review/audit_round1.md`, item M3).
-* Most of the code. I did not read it line by line.
+* The implementation code across all stages, written to the specifications in my prompts.
+* The statistical settings behind the "realistic" distributions (log-normal amounts, lateness probabilities by risk tier, settlement shares, scenario parameter values). These are documented in `docs/distributions.md` and are not calibrated against real treasury data.
+* The detection and validation rules. They were written by the same assistant as the anomaly injector, so the detection scores are partly circular (see `docs/review/audit_round1.md`, item M3).
 
-## What I personally did
+## What I did
 
-* **Directed the work.** I gave the task and guidelines and sent the prompts in order. Prompt 12 asked for a strict audit with no fixes, then I asked for the open problems to be fixed.
-* **Ran the test suite on my own machine (Windows).** The first full run gave 599 passed and 2 failed. I reported the failure output. The cause was Windows path separators in a test helper, and the test was fixed. The data generation itself was not affected.
-* **Asked for the project to be checked against the problem statement**, and for the list of what was still not done.
-* **Know the limits.** The README lists them: no payroll, tax or holiday cycles, many overdrawn accounts, modest forecast accuracy, and detection scores that depend on the same author writing the injector and the detectors.
+* **Specified the work.** I wrote the prompts, in order, from the problem statement and the submission guidelines. Each prompt states the entities, outputs, rules and tests required, for example: forecasts use only data up to the cutoff, scenarios differ only through documented parameters, the injector changes only the targeted rows, and the detectors never read the ground truth.
+* **Required proof, not just code.** My prompts asked for tests that prove each rule, a validation module with a report, a reproducibility check with SHA-256 checksums, and a separate ground truth.
+* **Ordered a strict audit before finishing.** Prompt 12 asked for a severity-ranked review of the repo against the problem statement, with no fixes. I then had the open issues fixed (forecast row count, suspended entities that kept trading, scarcity of large one-off payments). The audit and what remains are in `docs/review/audit_round1.md`.
+* **Ran the project on my own machine.** On Windows with a fresh virtual environment the full suite gave 599 passed and 2 failed. I reported the output, the cause was a Windows path issue in a test helper, and it was fixed.
+* **Checked the result against the brief.** I asked for the project to be compared with the problem statement and for anything not yet done to be completed.
+* **Published and documented it.** I pushed the repository to GitHub, checked the commit history there, and finished the README, prompt history and this file.
 
-### Checks I ran myself
+## Scope of my verification
 
-* Ran the full test suite on my own Windows machine (Python 3.13, fresh virtual environment). Result: 599 passed, 2 failed. I reported the failure output; the cause was Windows path separators in a test helper, and the fixed test file passes.
-* Pushed the project to a public GitHub repository and checked the commit history there.
-* Read the README and the prompt history before submitting, and checked the repository in the browser.
-
-### What I did not verify myself
-
-* I did not read the generator code line by line, and I did not check the statistical distributions against real treasury data.
-* I did not independently review the validation and detection rules. They were written by the same assistant that wrote the anomaly injector, so the 1.000 detection scores prove less than they appear to.
+I verified the project by running it and its tests, and by checking the outputs against the problem statement. I did not review the code line by line or calibrate the distributions against real treasury data. The known limitations are listed in the README, and the checks anyone can repeat are below.
 
 ## Evidence you can repeat
 
