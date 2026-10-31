@@ -1,0 +1,5 @@
+# Exact pins: numpy does not promise identical Generator output across versions,
+# and reproducibility (same seed -> same checksums) is an acceptance criterion.
+numpy==2.5.3
+pandas==3.0.5
+pytest==9.1.1
