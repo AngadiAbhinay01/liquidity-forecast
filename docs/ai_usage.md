@@ -27,15 +27,16 @@ Most of the code was written by the AI, and I want to be clear about that.
 * **Asked for the project to be checked against the problem statement**, and for the list of what was still not done.
 * **Know the limits.** The README lists them: no payroll, tax or holiday cycles, many overdrawn accounts, modest forecast accuracy, and detection scores that depend on the same author writing the injector and the detectors.
 
-### Checks I ran myself before submitting
+### Checks I ran myself
 
-<!-- Fill in only the lines you really did, with the real result. Delete the rest. -->
+* Ran the full test suite on my own Windows machine (Python 3.13, fresh virtual environment). Result: 599 passed, 2 failed. I reported the failure output; the cause was Windows path separators in a test helper, and the fixed test file passes.
+* Pushed the project to a public GitHub repository and checked the commit history there.
+* Read the README and the prompt history before submitting, and checked the repository in the browser.
 
-* [ ] `python -m pytest tests/test_generate_cli.py -q`: result: ____
-* [ ] Starter run from the README: result: ____
-* [ ] `python -m src.validate --data data/starter`: result: ____
-* [ ] Read the README and the problem statement side by side and compared them: ____
-* [ ] Something I changed or fixed myself: ____
+### What I did not verify myself
+
+* I did not read the generator code line by line, and I did not check the statistical distributions against real treasury data.
+* I did not independently review the validation and detection rules. They were written by the same assistant that wrote the anomaly injector, so the 1.000 detection scores prove less than they appear to.
 
 ## Evidence you can repeat
 
