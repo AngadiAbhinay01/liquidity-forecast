@@ -2,7 +2,7 @@
 
 I used Claude (Claude Code) for this project. I gave it the task text and the submission guidelines, then worked through a series of prompts, one stage at a time. The prompts I sent are in `prompts/prompt_history.md`.
 
-I am a final-year B.Tech student and I have not built a treasury or liquidity-forecasting system before. Most of the code was written by the AI, and I want to be clear about that.
+Most of the code was written by the AI, and I want to be clear about that.
 
 ## Where AI accelerated the work
 
