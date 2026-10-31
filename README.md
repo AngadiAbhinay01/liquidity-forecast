@@ -2,7 +2,9 @@
 
 A deterministic generator of synthetic treasury data (legal entities, bank accounts, ledger, receivables and payables, FX rates, forecast runs under three scenarios), a forecast-versus-actual comparison, five labelled injected data-quality anomalies kept in a separate ground truth, and a detection / validation / evaluation pipeline for them. Built for the YottaFlex AI Round 3 code challenge.
 
-<!-- TODO(you): add your name, the repository URL and the date of submission here. -->
+Author: Abhinay Angadi. Repository: https://github.com/AngadiAbhinay01/liquidity-forecast. Submitted 1 November 2026.
+
+AI use: this project was built with Claude (Claude Code), prompt by prompt. See `docs/ai_usage.md` and `prompts/prompt_history.md`. The git history was assembled at the end of the work from that session; the earlier commits carry the AI session's co-author line.
 
 ## Problem summary
 
@@ -19,7 +21,8 @@ The workflow consolidates account balances and expected cash flows to forecast s
 Python 3.13 (what I used; the pins below were resolved on it).
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate           # Windows PowerShell: .venv\Scripts\Activate.ps1
 pip install -r requirements.txt     # numpy 2.5.3, pandas 3.0.5, pytest 9.1.1 (exact pins)
 ```
 
@@ -69,7 +72,7 @@ Details: `docs/exports_and_reproducibility.md`.
 ## Tests and validation
 
 ```bash
-python -m pytest -q                      # about 600 tests, about 4 minutes
+python -m pytest -q                      # about 600 tests, 4 to 20 minutes depending on the machine
 python -m pytest tests/test_validation.py -q   # one area at a time
 ```
 
@@ -79,7 +82,7 @@ Validation has 31 checks in 9 categories (PK uniqueness, FK integrity, enums, ID
 
 Results from my last run (starter and full): the valid baseline passes every check; the injected dataset is flagged only at the labelled records; detection precision, recall and F1 are 1.000 for every issue type (see the limitation below on how much that proves).
 
-<!-- TODO(you): re-run the commands above on your machine and paste the actual numbers or a screenshot here. -->
+On my own Windows machine (Python 3.13) the full suite gave 599 passed and 2 failed. Both failures were Windows path separators in a test helper (`tests/test_generate_cli.py`), not a data problem; the helper is fixed and that file's 12 tests pass.
 
 ## Repository structure
 
@@ -103,7 +106,7 @@ tests/                            pytest suite
 
 ## Key assumptions and trade-offs
 
-The full list is in `docs/design_decisions.md` (66 numbered decisions). The ones that shape the data most:
+The full list is in `docs/design_decisions.md` (70 numbered decisions). The ones that shape the data most:
 
 * **Money** is integer minor units; amounts are positive with a `direction` column; base currency USD; JPY has no decimals. Base amount = round(amount x rate x 10^(base exponent - local exponent)).
 * **Schema enforces structure, not business rules.** Duplicates, cutoff leaks, missing FX and currency mix are views and validators, so injected anomalies can load and be reviewed. Tables that must not change after writing (ledger, forecast items, status events, decision log) have append-only triggers.
@@ -124,10 +127,8 @@ A strict self-review is in `docs/review/audit_round1.md` (ranked by severity). A
 * The forecast run calendar has only 6 cutoff dates, and scenario metrics are scored on different numbers of runs.
 * The 1.000 detection scores are partly circular: the anomalies are simple single-field edits and the detectors were written by the same author as the injector.
 * One test gap is known (batched documents using the minimum date instead of the batch date).
-* The suite takes about 4 minutes and there is no CI configuration.
+* The suite takes 4 to 20 minutes depending on the machine and there is no CI configuration.
 * With `--no-anomalies` the clean baseline holds the full 20,000 forecast items; with anomalies, 19,990 baseline items plus 10 repeats make 20,000.
-
-<!-- TODO(you): keep this list in sync with whatever else you decide to change before submission. -->
 
 ## Next steps
 
