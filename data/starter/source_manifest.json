@@ -4,15 +4,15 @@
   "environment": {
     "numpy": "2.5.3",
     "pandas": "3.0.5",
-    "python": "3.13.18",
-    "sqlite": "3.53.1"
+    "python": "3.12.10",
+    "sqlite": "3.49.1"
   },
   "external_sources": [],
   "files": [
     {
       "bytes": 3919872,
       "path": "db/liquidity.sqlite",
-      "sha256": "638e2c5d571172c9aec20dd007658b35301c8233a7e624f4b5de1b100d6c9fac"
+      "sha256": "959e6c9680bfa5cf31f9b5bca15b0fcff3c341484a706df196f17b8b97839038"
     },
     {
       "bytes": 82021,
@@ -30,9 +30,9 @@
       "sha256": "a7c449250a6f402320a32e380063ea175bd26aa5a5f828d5e083e5301cc24aa4"
     },
     {
-      "bytes": 3011,
+      "bytes": 3088,
       "path": "derived/forecast_accuracy_by_scenario.json",
-      "sha256": "0fca2055f32ea0802d446945d7e81493435dfac3fb75d82fd2b9843ecd09dd33"
+      "sha256": "b4289d3f1179a9dd69a0691f28ea25a22a621829718aace463c8400080e2fc23"
     },
     {
       "bytes": 108032,
@@ -55,9 +55,9 @@
       "sha256": "d36cd6470a74bda5c1bfd216b12afd3014ea10a0bd66dfd4385ef8d382ebe3e6"
     },
     {
-      "bytes": 8079,
+      "bytes": 8330,
       "path": "ground_truth/ground_truth.json",
-      "sha256": "b4819e33d6a5b62667cc8559caa5728e7593f89e5bf99281b94be1a4bf059718"
+      "sha256": "37e46dc907d6db3907bac8cb0ff94d2335227c14291529503979e3af172e7ff3"
     },
     {
       "bytes": 2111,
@@ -230,9 +230,9 @@
       "sha256": "e7d274b0ccc13f84776e837a0fdfad9e64cb31300ce03e6fc73cbe6684a17ede"
     },
     {
-      "bytes": 1105,
+      "bytes": 1152,
       "path": "run_config.json",
-      "sha256": "f1d72daf82f21c901dd2ac1b5ba061c9320d09d49b9ad382a7b0e226610b92dd"
+      "sha256": "dff14ce05822a07fb82b72f07d3f648f24b79f78134eb9af66952d9fb8e248ff"
     },
     {
       "bytes": 38835,

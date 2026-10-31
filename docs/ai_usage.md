@@ -6,7 +6,7 @@ Tool used: Claude (Claude Code) working in a session on this repository, one pro
 
 ## Where AI accelerated the work
 
-Draft, for you to correct:
+
 
 * **Writing the generator and its stages.** Entity, account and FX generation; transaction planning (invoices, settlement tranches, batching, reversals); forecast scenarios and runs; the variance and metrics code; the anomaly injector.
 * **Tests.** Most of the about 600 tests, including hand-built broken inputs for each validation rule, and mutation checks (breaking the code on purpose to confirm a test fails).
@@ -17,18 +17,15 @@ Draft, for you to correct:
 
 ## Where I relied heavily on it
 
-Draft, for you to correct:
 
 * The statistical choices behind the "realistic" distributions (log-normal amounts, lateness probabilities by risk tier, settlement shares, scenario parameter values). I accepted them without independent calibration against real treasury data.
 * The modelling interpretation of the brief: ID formats, status lifecycles and their allowed transitions, the list of variance drivers, which anomalies target which rows.
 * The detection and validation rules, which the same assistant wrote after writing the injector; the scores they give are therefore partly circular (see `docs/review/audit_round1.md`, M3).
 * Long stretches of code that I did not read line by line.
 
-<!-- TODO(you): edit these bullets to say what is true for you. -->
+
 
 ## What I personally reviewed, changed and validated
-
-<!-- TODO(you): fill in. Suggested prompts, delete what does not apply:
 
 * Which files or modules I read line by line, and which I only ran.
 * Decisions I made or overruled (for example: confirming or changing the account ID format, the scale numbers, which anomalies to inject).

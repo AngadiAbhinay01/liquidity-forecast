@@ -6,7 +6,7 @@ External sources: none.
 
 Generator command: `python -m src.generate --scale starter --seed 20261022`
 
-Seed 20261022, scale `starter`, config fingerprint `8ce3c99d63b685ca`. Python 3.13.18, numpy 2.5.3, pandas 3.0.5, SQLite 3.53.1.
+Seed 20261022, scale `starter`, config fingerprint `8ce3c99d63b685ca`. Python 3.12.10, numpy 2.5.3, pandas 3.0.5, SQLite 3.49.1.
 
 ## Tables
 
@@ -34,16 +34,16 @@ Seed 20261022, scale `starter`, config fingerprint `8ce3c99d63b685ca`. Python 3.
 
 | File | Bytes | SHA-256 |
 |---|---|---|
-| db/liquidity.sqlite | 3,919,872 | `638e2c5d571172c9aec20dd007658b35301c8233a7e624f4b5de1b100d6c9fac` |
+| db/liquidity.sqlite | 3,919,872 | `959e6c9680bfa5cf31f9b5bca15b0fcff3c341484a706df196f17b8b97839038` |
 | derived/consolidated_daily_position.csv | 82,021 | `83b30694f0b58abf4ce33be97761951f013c321fdcb4ad6bb85c6fa3feadc9e7` |
 | derived/forecast_accuracy_by_run.csv | 1,635 | `1cbb213edfb6e6e3426ed09fabbd607ece8f7abde2ee73ba16ec7118055efc91` |
 | derived/forecast_accuracy_by_scenario.csv | 1,240 | `a7c449250a6f402320a32e380063ea175bd26aa5a5f828d5e083e5301cc24aa4` |
-| derived/forecast_accuracy_by_scenario.json | 3,011 | `0fca2055f32ea0802d446945d7e81493435dfac3fb75d82fd2b9843ecd09dd33` |
+| derived/forecast_accuracy_by_scenario.json | 3,088 | `b4289d3f1179a9dd69a0691f28ea25a22a621829718aace463c8400080e2fc23` |
 | derived/forecast_variance_daily.csv | 108,032 | `32b76581f22d467cac9fe44e8aa0a1e25690151e83dfdc686c95c3bd5c1a120f` |
 | derived/variance_driver_summary.csv | 817 | `96357d149b41303462fddb6cd5e09bee50e3f87570bed68a4bbbb2aae3c0ecae` |
 | generator_command.txt | 55 | `af477aadf02b4f5ada72fdccead3597df5ae712d8e44fd0b1c7c36ff6fee23fc` |
 | ground_truth/ground_truth.csv | 4,994 | `d36cd6470a74bda5c1bfd216b12afd3014ea10a0bd66dfd4385ef8d382ebe3e6` |
-| ground_truth/ground_truth.json | 8,079 | `b4819e33d6a5b62667cc8559caa5728e7593f89e5bf99281b94be1a4bf059718` |
+| ground_truth/ground_truth.json | 8,330 | `37e46dc907d6db3907bac8cb0ff94d2335227c14291529503979e3af172e7ff3` |
 | input/bank_account.csv | 2,111 | `cf8b340215f6145ba57e514e6cfdbdff9222987ad299eb2216015624f4e34e2f` |
 | input/cash_flow_forecast.csv | 102,491 | `fd9c600df76b06db9f7a2c23eba800466ed28e1b0e5738d63cc0e855fb2a9c31` |
 | input/currency.csv | 152 | `86a76221ab9a6b2e3642d31cfb8ba88391ff51a30f4bd3cb10ecb6b4e04baf38` |
@@ -78,6 +78,6 @@ Seed 20261022, scale `starter`, config fingerprint `8ce3c99d63b685ca`. Python 3.
 | json/receivable.json | 257,927 | `5988929bda59a703f220d8ac7862efaf6fd927300efd5d975c7434ee974de1e2` |
 | json/receivable_status_event.json | 385,273 | `fb50d087722f6b1d01cefba9367c28bf3b9db61bd06edef1331111a0b3dd31cb` |
 | json/settlement_link.json | 211,683 | `e7d274b0ccc13f84776e837a0fdfad9e64cb31300ce03e6fc73cbe6684a17ede` |
-| run_config.json | 1,105 | `f1d72daf82f21c901dd2ac1b5ba061c9320d09d49b9ad382a7b0e226610b92dd` |
+| run_config.json | 1,152 | `dff14ce05822a07fb82b72f07d3f648f24b79f78134eb9af66952d9fb8e248ff` |
 | sql/schema.sql | 38,835 | `d05838487f913ce087f9a05314aa6be77afb058e8b747f03a131ae2a20da0cf9` |
 | sql/seed_data.sql | 6,573,146 | `19b24f2e0b8bb3e041946e2d736c093abeafbb4838e798a0c9500d60b67460c7` |
