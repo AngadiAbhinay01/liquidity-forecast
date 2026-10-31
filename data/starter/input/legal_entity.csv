@@ -1,0 +1,7 @@
+entity_id,legal_name,country_code,functional_currency,entity_type,parent_entity_id,min_liquidity_buffer_base_minor,status,effective_from,effective_to,suspended_from
+ENT-000001,Ormermer Energy SAS,FR,EUR,OPERATING,ENT-000002,51443111,ACTIVE,2023-06-09,,
+ENT-000002,Silbex Treasury Centre Ltd,GB,GBP,TREASURY_CENTRE,ENT-000006,38683150,ACTIVE,2023-06-09,,
+ENT-000003,Silpolnev Industries Pvt Ltd,IN,INR,OPERATING,ENT-000002,36017620,CLOSED,2023-06-09,2026-10-09,
+ENT-000004,Marquofen Packaging K.K.,JP,JPY,OPERATING,ENT-000002,17925249,ACTIVE,2023-06-09,,
+ENT-000005,Oradenris Textiles Inc,US,USD,OPERATING,ENT-000002,34180284,SUSPENDED,2024-07-20,,2026-04-21
+ENT-000006,Mermer Group Holdings Pvt Ltd,IN,INR,HOLDING,,33639521,ACTIVE,2023-06-09,,

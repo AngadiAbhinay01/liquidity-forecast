@@ -1,0 +1,6 @@
+currency_code,currency_name,minor_unit_exponent,is_base
+USD,US Dollar,2,1
+EUR,Euro,2,0
+GBP,Pound Sterling,2,0
+INR,Indian Rupee,2,0
+JPY,Japanese Yen,0,0

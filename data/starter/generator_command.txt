@@ -1,0 +1,1 @@
+python -m src.generate --scale starter --seed 20261022

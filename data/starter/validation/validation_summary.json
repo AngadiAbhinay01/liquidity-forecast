@@ -1,0 +1,376 @@
+{
+  "by_category": {
+    "ALLOWED_ENUMS": {
+      "checks": 1,
+      "rows_examined": 28819,
+      "status": "PASS",
+      "violations": 0
+    },
+    "ARITHMETIC_RECONCILIATION": {
+      "checks": 7,
+      "rows_examined": 28517,
+      "status": "FAIL",
+      "violations": 12
+    },
+    "CURRENCY_CONSISTENCY": {
+      "checks": 2,
+      "rows_examined": 17113,
+      "status": "FAIL",
+      "violations": 3
+    },
+    "DATE_ORDERING": {
+      "checks": 6,
+      "rows_examined": 35443,
+      "status": "FAIL",
+      "violations": 3
+    },
+    "DUPLICATES": {
+      "checks": 4,
+      "rows_examined": 6450,
+      "status": "FAIL",
+      "violations": 3
+    },
+    "FK_INTEGRITY": {
+      "checks": 2,
+      "rows_examined": 51787,
+      "status": "PASS",
+      "violations": 0
+    },
+    "ID_FORMAT": {
+      "checks": 2,
+      "rows_examined": 39410,
+      "status": "PASS",
+      "violations": 0
+    },
+    "LIFECYCLE_TRANSITIONS": {
+      "checks": 5,
+      "rows_examined": 7950,
+      "status": "PASS",
+      "violations": 0
+    },
+    "PK_UNIQUENESS": {
+      "checks": 2,
+      "rows_examined": 194792,
+      "status": "PASS",
+      "violations": 0
+    }
+  },
+  "checks": [
+    {
+      "category": "PK_UNIQUENESS",
+      "check_id": "PK_UNIQUE",
+      "description": "Primary key and UNIQUE constraints hold on every table",
+      "rows_examined": 30771,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "PK_UNIQUENESS",
+      "check_id": "NOT_NULL",
+      "description": "Columns declared NOT NULL are never empty, primary key parts included",
+      "rows_examined": 164021,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "FK_INTEGRITY",
+      "check_id": "FK_EXISTS",
+      "description": "Every non-null foreign key points at an existing parent row",
+      "rows_examined": 50390,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "FK_INTEGRITY",
+      "check_id": "FK_SETTLEMENT_XOR",
+      "description": "A settlement link points at exactly one of receivable / payable",
+      "rows_examined": 1397,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ALLOWED_ENUMS",
+      "check_id": "ENUM_VALUES",
+      "description": "Every constrained column holds only values the schema allows",
+      "rows_examined": 28819,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ID_FORMAT",
+      "check_id": "ID_REGEX",
+      "description": "Every identifier (and every foreign key to one) matches its documented format",
+      "rows_examined": 32855,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ID_FORMAT",
+      "check_id": "ID_CONSISTENT",
+      "description": "The parts of an ID agree with the row: entity in account id, year in ledger/document ids, rate id with currency and date",
+      "rows_examined": 6555,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DATE_ORDERING",
+      "check_id": "DATE_FORMAT",
+      "description": "Every date column holds a real YYYY-MM-DD date",
+      "rows_examined": 23592,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DATE_ORDERING",
+      "check_id": "DATE_PAIRS",
+      "description": "Within a row: invoice <= due and expected, effective_from <= effective_to, cutoff < horizon end, source data <= cutoff... see detail",
+      "rows_examined": 3518,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DATE_ORDERING",
+      "check_id": "DATE_CUTOFF",
+      "description": "A forecast item uses no data dated after its run's cutoff (source data, source ledger entry, FX rate)",
+      "rows_examined": 600,
+      "status": "FAIL",
+      "violations": 3
+    },
+    {
+      "category": "DATE_ORDERING",
+      "check_id": "DATE_EVENTS",
+      "description": "Status events run in date order, start on the document's invoice date and end on a date that matches the stored status",
+      "rows_examined": 4881,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DATE_ORDERING",
+      "check_id": "DATE_SETTLEMENT",
+      "description": "A ledger entry that settles a document is not dated before the document, and a reversal is not dated before its original",
+      "rows_examined": 1406,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DATE_ORDERING",
+      "check_id": "DATE_ACTUALS_AFTER_CUTOFF",
+      "description": "A forecast-vs-actual row compares against an actual dated after the run cutoff and not after the compared-through date",
+      "rows_examined": 1446,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "POSITION_RECONCILES",
+      "description": "Daily position: closing = opening + credits - debits; opening = previous closing; closing and totals equal the ledger",
+      "rows_examined": 6129,
+      "status": "FAIL",
+      "violations": 6
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "FX_COMPLETE",
+      "description": "A non-base-currency amount carries an FX rate and a base amount; a base-currency amount carries neither a rate nor a conversion",
+      "rows_examined": 9729,
+      "status": "FAIL",
+      "violations": 3
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "FX_RECOMPUTE",
+      "description": "Base amount = round(amount x rate x 10^(base exp - local exp)) with the rate the row cites; the rate is for the row's currency and, for actuals, its date",
+      "rows_examined": 7314,
+      "status": "FAIL",
+      "violations": 3
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "SETTLEMENT_ALLOCATION",
+      "description": "Allocations of a settlement entry sum to its amount; a document is never allocated more than its amount",
+      "rows_examined": 2810,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "PROJECTION_ARITHMETIC",
+      "description": "Projected closing = opening + inflow - outflow; shortfall flag = (closing < buffer); each run-day follows the previous one",
+      "rows_examined": 1080,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "VARIANCE_ARITHMETIC",
+      "description": "Variance = actual - forecast; amount and FX parts add up to it; date variance = actual date - forecast date",
+      "rows_examined": 1446,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "ARITHMETIC_RECONCILIATION",
+      "check_id": "REVERSAL_MIRRORS",
+      "description": "A reversal entry has the original's account and amount and the opposite direction",
+      "rows_examined": 9,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "LIFECYCLE_TRANSITIONS",
+      "check_id": "LIFECYCLE_RECEIVABLE",
+      "description": "Receivable events follow the allowed transitions; the stored status is the last event's status",
+      "rows_examined": 1837,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "LIFECYCLE_TRANSITIONS",
+      "check_id": "LIFECYCLE_PAYABLE",
+      "description": "Payable events follow the allowed transitions; the stored status is the last event's status",
+      "rows_examined": 1630,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "LIFECYCLE_TRANSITIONS",
+      "check_id": "LIFECYCLE_RUN",
+      "description": "Forecast-run events follow the allowed transitions; stored status is the last event's; SUPERSEDED means a later version exists",
+      "rows_examined": 30,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "LIFECYCLE_TRANSITIONS",
+      "check_id": "LIFECYCLE_ACTIVITY_WINDOW",
+      "description": "No ledger entry is dated on or after its entity's suspension, or after the closure of its account or entity",
+      "rows_examined": 3000,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "LIFECYCLE_TRANSITIONS",
+      "check_id": "LIFECYCLE_SETTLEMENT_STATE",
+      "description": "A SETTLED document is fully allocated, an OPEN one has no allocation, a PARTIALLY_SETTLED one has some",
+      "rows_examined": 1453,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DUPLICATES",
+      "check_id": "DUP_FORECAST_ITEM",
+      "description": "No forecast item repeats another in the same run: all fields equal except the item id",
+      "rows_examined": 600,
+      "status": "FAIL",
+      "violations": 3
+    },
+    {
+      "category": "DUPLICATES",
+      "check_id": "DUP_LEDGER_REF",
+      "description": "Bank reference numbers on ledger entries are unique",
+      "rows_examined": 3000,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DUPLICATES",
+      "check_id": "DUP_SETTLEMENT_LINK",
+      "description": "The same document is not linked to the same ledger entry twice",
+      "rows_examined": 1397,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "DUPLICATES",
+      "check_id": "DUP_DOCUMENT",
+      "description": "A counterparty does not have two receivables (payables) with the same document reference and amount",
+      "rows_examined": 1453,
+      "status": "PASS",
+      "violations": 0
+    },
+    {
+      "category": "CURRENCY_CONSISTENCY",
+      "check_id": "CURRENCY_ACCOUNT",
+      "description": "A row's currency equals the currency of its bank account",
+      "rows_examined": 11182,
+      "status": "FAIL",
+      "violations": 3
+    },
+    {
+      "category": "CURRENCY_CONSISTENCY",
+      "check_id": "CURRENCY_CODES",
+      "description": "Currency codes used anywhere exist in the currency table and rates quote the base currency",
+      "rows_examined": 5931,
+      "status": "PASS",
+      "violations": 0
+    }
+  ],
+  "checks_failed": 6,
+  "checks_run": 31,
+  "dataset": "starter",
+  "distinct_records_flagged": 15,
+  "ground_truth_comparison": {
+    "by_issue_type": {
+      "CURRENCY_MIXED_WITHOUT_CONVERSION": {
+        "cases": 3,
+        "caught_by_any_check": 3,
+        "caught_by_expected_check": 3,
+        "expected_check": "CURRENCY_ACCOUNT"
+      },
+      "DOUBLE_COUNTED_CASH_FLOW": {
+        "cases": 3,
+        "caught_by_any_check": 3,
+        "caught_by_expected_check": 3,
+        "expected_check": "DUP_FORECAST_ITEM"
+      },
+      "FORECAST_USES_ACTUAL_AFTER_CUTOFF": {
+        "cases": 3,
+        "caught_by_any_check": 3,
+        "caught_by_expected_check": 3,
+        "expected_check": "DATE_CUTOFF"
+      },
+      "FX_RATE_MISSING": {
+        "cases": 3,
+        "caught_by_any_check": 3,
+        "caught_by_expected_check": 3,
+        "expected_check": "FX_COMPLETE"
+      },
+      "OPENING_PLUS_LEDGER_NE_CLOSING": {
+        "cases": 3,
+        "caught_by_any_check": 3,
+        "caught_by_expected_check": 3,
+        "expected_check": "POSITION_RECONCILES"
+      }
+    },
+    "caught_by_any_check": 15,
+    "caught_by_expected_check": 15,
+    "labelled_cases": 15,
+    "unlabelled_flags": []
+  },
+  "row_counts": {
+    "bank_account": 18,
+    "cash_flow_forecast": 600,
+    "currency": 5,
+    "currency_rate": 1460,
+    "daily_cash_position": 6129,
+    "forecast_daily_projection": 1080,
+    "forecast_run": 6,
+    "forecast_run_status_event": 24,
+    "forecast_vs_actual": 1446,
+    "ledger_entry": 3000,
+    "legal_entity": 6,
+    "liquidity_scenario": 3,
+    "payable": 706,
+    "payable_status_event": 1630,
+    "receivable": 747,
+    "receivable_status_event": 1837,
+    "settlement_link": 1397
+  },
+  "status": "FAIL",
+  "violations": 21,
+  "violations_by_table": {
+    "cash_flow_forecast": 6,
+    "daily_cash_position": 9,
+    "ledger_entry": 6
+  }
+}

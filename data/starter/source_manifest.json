@@ -1,0 +1,323 @@
+{
+  "config_fingerprint": "8ce3c99d63b685ca689091e4a3e4d3f6ba325f8318c2db42c9178659b32bc806",
+  "dataset": "synthetic liquidity-forecasting dataset",
+  "environment": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.13.18",
+    "sqlite": "3.53.1"
+  },
+  "external_sources": [],
+  "files": [
+    {
+      "bytes": 3919872,
+      "path": "db/liquidity.sqlite",
+      "sha256": "638e2c5d571172c9aec20dd007658b35301c8233a7e624f4b5de1b100d6c9fac"
+    },
+    {
+      "bytes": 82021,
+      "path": "derived/consolidated_daily_position.csv",
+      "sha256": "83b30694f0b58abf4ce33be97761951f013c321fdcb4ad6bb85c6fa3feadc9e7"
+    },
+    {
+      "bytes": 1635,
+      "path": "derived/forecast_accuracy_by_run.csv",
+      "sha256": "1cbb213edfb6e6e3426ed09fabbd607ece8f7abde2ee73ba16ec7118055efc91"
+    },
+    {
+      "bytes": 1240,
+      "path": "derived/forecast_accuracy_by_scenario.csv",
+      "sha256": "a7c449250a6f402320a32e380063ea175bd26aa5a5f828d5e083e5301cc24aa4"
+    },
+    {
+      "bytes": 3011,
+      "path": "derived/forecast_accuracy_by_scenario.json",
+      "sha256": "0fca2055f32ea0802d446945d7e81493435dfac3fb75d82fd2b9843ecd09dd33"
+    },
+    {
+      "bytes": 108032,
+      "path": "derived/forecast_variance_daily.csv",
+      "sha256": "32b76581f22d467cac9fe44e8aa0a1e25690151e83dfdc686c95c3bd5c1a120f"
+    },
+    {
+      "bytes": 817,
+      "path": "derived/variance_driver_summary.csv",
+      "sha256": "96357d149b41303462fddb6cd5e09bee50e3f87570bed68a4bbbb2aae3c0ecae"
+    },
+    {
+      "bytes": 55,
+      "path": "generator_command.txt",
+      "sha256": "af477aadf02b4f5ada72fdccead3597df5ae712d8e44fd0b1c7c36ff6fee23fc"
+    },
+    {
+      "bytes": 4994,
+      "path": "ground_truth/ground_truth.csv",
+      "sha256": "d36cd6470a74bda5c1bfd216b12afd3014ea10a0bd66dfd4385ef8d382ebe3e6"
+    },
+    {
+      "bytes": 8079,
+      "path": "ground_truth/ground_truth.json",
+      "sha256": "b4819e33d6a5b62667cc8559caa5728e7593f89e5bf99281b94be1a4bf059718"
+    },
+    {
+      "bytes": 2111,
+      "path": "input/bank_account.csv",
+      "sha256": "cf8b340215f6145ba57e514e6cfdbdff9222987ad299eb2216015624f4e34e2f"
+    },
+    {
+      "bytes": 102491,
+      "path": "input/cash_flow_forecast.csv",
+      "sha256": "fd9c600df76b06db9f7a2c23eba800466ed28e1b0e5738d63cc0e855fb2a9c31"
+    },
+    {
+      "bytes": 152,
+      "path": "input/currency.csv",
+      "sha256": "86a76221ab9a6b2e3642d31cfb8ba88391ff51a30f4bd3cb10ecb6b4e04baf38"
+    },
+    {
+      "bytes": 100732,
+      "path": "input/currency_rate.csv",
+      "sha256": "9413d22093986accad1b2d3ef305e8fdb3f7515ac6111b4ce0dafd0da39b1af4"
+    },
+    {
+      "bytes": 538654,
+      "path": "input/daily_cash_position.csv",
+      "sha256": "5207d090dfdd5b3eab166f9a7542736a9937aa05faef7bdc97e8c2985a43e3bf"
+    },
+    {
+      "bytes": 85499,
+      "path": "input/forecast_daily_projection.csv",
+      "sha256": "35acc019865cd03ed92b947f35462e912e50b06e51aa47e7af4a8c592b7a5045"
+    },
+    {
+      "bytes": 1719,
+      "path": "input/forecast_run.csv",
+      "sha256": "f6c270b58e5a64fc5693294e79855933d8ece1e46a0a7b64613b1c47d6c088f1"
+    },
+    {
+      "bytes": 1836,
+      "path": "input/forecast_run_status_event.csv",
+      "sha256": "fec51f241bd5bf2a9e021c24d3dc1359f6baed9a72772b297e09ef5440756888"
+    },
+    {
+      "bytes": 230710,
+      "path": "input/forecast_vs_actual.csv",
+      "sha256": "f0a96f55f05e0a4a11600b111a54e3d1dfa231b33697c3f61c15e40ee245858f"
+    },
+    {
+      "bytes": 444917,
+      "path": "input/ledger_entry.csv",
+      "sha256": "e42e7d37680a44483b010142a2d3a7b92baaaa3915ab59726e8ca0405e2c3e40"
+    },
+    {
+      "bytes": 744,
+      "path": "input/legal_entity.csv",
+      "sha256": "d1d3d88581208a01903987f043cdc07e9de2030a7987b2a943db9e205a87539a"
+    },
+    {
+      "bytes": 929,
+      "path": "input/liquidity_scenario.csv",
+      "sha256": "aad9835bb8e865651d0b66d34656a0be69da84689e56b9776daf43b2302b84cf"
+    },
+    {
+      "bytes": 99011,
+      "path": "input/payable.csv",
+      "sha256": "070a61c3295559e2f5734b1a51a6d61107434abb8f36dca5f6f283de09173a92"
+    },
+    {
+      "bytes": 117145,
+      "path": "input/payable_status_event.csv",
+      "sha256": "85cc751ba7f68f2ea4f37e7cc23e1c31a7872c14d5e34b3f930fb918859d424a"
+    },
+    {
+      "bytes": 102707,
+      "path": "input/receivable.csv",
+      "sha256": "6da1e3a99d1d45ae4e12faad3d20cd152ab8829d7c46e3066da165350d06e89d"
+    },
+    {
+      "bytes": 135475,
+      "path": "input/receivable_status_event.csv",
+      "sha256": "5b7e6a88407c9f58aa678e724849d5f80e63e9223b0f3297963eacda2ef178c1"
+    },
+    {
+      "bytes": 66475,
+      "path": "input/settlement_link.csv",
+      "sha256": "3ec4463af5f085b4907b0988c32f9625a83e19e2cb846c062aa143c586ebef01"
+    },
+    {
+      "bytes": 5296,
+      "path": "json/bank_account.json",
+      "sha256": "4e14e7a1ead4246d8ff96d52d8bf438fdb3a8ba6681d6be5a43748d5163469ce"
+    },
+    {
+      "bytes": 298634,
+      "path": "json/cash_flow_forecast.json",
+      "sha256": "672e873536fcb96d60dce35fe241007fa668ad200ef78312c981c4d52e69f934"
+    },
+    {
+      "bytes": 454,
+      "path": "json/currency.json",
+      "sha256": "8edf57310e82845fcee7542b64dac263e8062e29058b5fb5c787fa94d7fa3490"
+    },
+    {
+      "bytes": 230439,
+      "path": "json/currency_rate.json",
+      "sha256": "afa86642157a76c7e3450bdcaf66b67af50f906439a48a7b32141f736b9592a8"
+    },
+    {
+      "bytes": 1638420,
+      "path": "json/daily_cash_position.json",
+      "sha256": "1d5afe1a276ee30b090d356377dbe549fa67952188e39f17cb0851fb32939324"
+    },
+    {
+      "bytes": 319672,
+      "path": "json/forecast_daily_projection.json",
+      "sha256": "70693c4fb1de680e2202281e95088be2cf063ac41331c4223d9f85f1e8caadd0"
+    },
+    {
+      "bytes": 2800,
+      "path": "json/forecast_run.json",
+      "sha256": "f1453e2ae166513eed4d78de7ea0c50157ab5f53f0bb7a1ed3eeeded7eaab49d"
+    },
+    {
+      "bytes": 4550,
+      "path": "json/forecast_run_status_event.json",
+      "sha256": "0e04ec7a434ffa4104f5971e96f1f8d5035b0f74debb937f942ff3fbbd2ec5d1"
+    },
+    {
+      "bytes": 808486,
+      "path": "json/forecast_vs_actual.json",
+      "sha256": "ae19838800ce2c42054d66fe3f504eb491cc5cd8a5d2a3aad56306e585c0f5ac"
+    },
+    {
+      "bytes": 1081561,
+      "path": "json/ledger_entry.json",
+      "sha256": "3efd42ce05f7d3870a08e59ec2a55d4c09aabb0528414c53badb17755ddd12d1"
+    },
+    {
+      "bytes": 1864,
+      "path": "json/legal_entity.json",
+      "sha256": "c76e47fea225049254b56adb20c43a7dec0e9118e7fe5893aaf3c1687343e471"
+    },
+    {
+      "bytes": 1419,
+      "path": "json/liquidity_scenario.json",
+      "sha256": "e27a9889cbf90347e2b7fb3f48e51f7bd0e946c522ce79f4d342d1d3089a0dcc"
+    },
+    {
+      "bytes": 243590,
+      "path": "json/payable.json",
+      "sha256": "e0f0bbee99dd8d3eb56ccdb477806650d338a1b0c6bbff9809e7a4b6ace63b08"
+    },
+    {
+      "bytes": 333906,
+      "path": "json/payable_status_event.json",
+      "sha256": "3cda045668042583d1cf019bc606f00ea229af480b615d501d92643d321ab765"
+    },
+    {
+      "bytes": 257927,
+      "path": "json/receivable.json",
+      "sha256": "5988929bda59a703f220d8ac7862efaf6fd927300efd5d975c7434ee974de1e2"
+    },
+    {
+      "bytes": 385273,
+      "path": "json/receivable_status_event.json",
+      "sha256": "fb50d087722f6b1d01cefba9367c28bf3b9db61bd06edef1331111a0b3dd31cb"
+    },
+    {
+      "bytes": 211683,
+      "path": "json/settlement_link.json",
+      "sha256": "e7d274b0ccc13f84776e837a0fdfad9e64cb31300ce03e6fc73cbe6684a17ede"
+    },
+    {
+      "bytes": 1105,
+      "path": "run_config.json",
+      "sha256": "f1d72daf82f21c901dd2ac1b5ba061c9320d09d49b9ad382a7b0e226610b92dd"
+    },
+    {
+      "bytes": 38835,
+      "path": "sql/schema.sql",
+      "sha256": "d05838487f913ce087f9a05314aa6be77afb058e8b747f03a131ae2a20da0cf9"
+    },
+    {
+      "bytes": 6573146,
+      "path": "sql/seed_data.sql",
+      "sha256": "19b24f2e0b8bb3e041946e2d736c093abeafbb4838e798a0c9500d60b67460c7"
+    }
+  ],
+  "generator_command": "python -m src.generate --scale starter --seed 20261022",
+  "scale": "starter",
+  "seed": 20261022,
+  "statement": "All data in this dataset is synthetic. It is generated by this repository's code from a fixed random seed. No real company, bank, customer, transaction or market-data source was used, downloaded or copied. The FX rates are a seeded random walk, not market rates.",
+  "synthetic": true,
+  "tables": [
+    {
+      "name": "currency",
+      "rows": 5
+    },
+    {
+      "name": "currency_rate",
+      "rows": 1460
+    },
+    {
+      "name": "legal_entity",
+      "rows": 6
+    },
+    {
+      "name": "bank_account",
+      "rows": 18
+    },
+    {
+      "name": "receivable",
+      "rows": 747
+    },
+    {
+      "name": "payable",
+      "rows": 706
+    },
+    {
+      "name": "ledger_entry",
+      "rows": 3000
+    },
+    {
+      "name": "settlement_link",
+      "rows": 1397
+    },
+    {
+      "name": "receivable_status_event",
+      "rows": 1837
+    },
+    {
+      "name": "payable_status_event",
+      "rows": 1630
+    },
+    {
+      "name": "daily_cash_position",
+      "rows": 6129
+    },
+    {
+      "name": "liquidity_scenario",
+      "rows": 3
+    },
+    {
+      "name": "forecast_run",
+      "rows": 6
+    },
+    {
+      "name": "forecast_run_status_event",
+      "rows": 24
+    },
+    {
+      "name": "cash_flow_forecast",
+      "rows": 600
+    },
+    {
+      "name": "forecast_daily_projection",
+      "rows": 1080
+    },
+    {
+      "name": "forecast_vs_actual",
+      "rows": 1446
+    }
+  ]
+}

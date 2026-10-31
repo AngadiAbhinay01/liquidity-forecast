@@ -1,0 +1,63 @@
+{
+  "detections": 15,
+  "false_positives": [],
+  "ground_truth_cases": 15,
+  "macro": {
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+  },
+  "micro": {
+    "f1": 1.0,
+    "fn": 0,
+    "fp": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "tp": 15
+  },
+  "missed": [],
+  "per_issue_type": {
+    "CURRENCY_MIXED_WITHOUT_CONVERSION": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 3
+    },
+    "DOUBLE_COUNTED_CASH_FLOW": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 3
+    },
+    "FORECAST_USES_ACTUAL_AFTER_CUTOFF": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 3
+    },
+    "FX_RATE_MISSING": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 3
+    },
+    "OPENING_PLUS_LEDGER_NE_CLOSING": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 3
+    }
+  },
+  "recommended_decision_accuracy": 1.0,
+  "routing_accuracy": 1.0
+}

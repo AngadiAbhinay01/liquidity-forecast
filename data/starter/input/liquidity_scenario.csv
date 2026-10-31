@@ -1,0 +1,4 @@
+scenario_id,scenario_code,version_no,scenario_name,assumption_notes,receipt_delay_days,collection_haircut_bps,fx_shock_bps,one_off_multiplier_bps,status,effective_from,effective_to
+SCN-001,BASE,1,Base case,"Receivables arrive on their expected date, in full. Payables leave on their expected date. Non-base currencies are valued at the last rate known at the cutoff. No adjustments.",0,0,0,10000,ACTIVE,2026-01-01,
+SCN-002,DELAYED_RECEIPT,1,Delayed receipts,"Every receivable arrives 14 days later than its expected date (rolled to the next business day). Amounts, payables and FX are as in BASE.",14,0,0,10000,ACTIVE,2026-01-01,
+SCN-003,STRESS,1,Combined stress,Receivables arrive 21 days late and only 90% is collected; every non-base currency is worth 10% less in base currency (applied to flows and to the opening balance); large one-off payments cost 1.5 times their scheduled amount.,21,1000,-1000,15000,ACTIVE,2026-01-01,

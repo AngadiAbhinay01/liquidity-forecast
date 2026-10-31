@@ -1,0 +1,7 @@
+[
+{"currency_code":"USD","currency_name":"US Dollar","minor_unit_exponent":2,"is_base":1},
+{"currency_code":"EUR","currency_name":"Euro","minor_unit_exponent":2,"is_base":0},
+{"currency_code":"GBP","currency_name":"Pound Sterling","minor_unit_exponent":2,"is_base":0},
+{"currency_code":"INR","currency_name":"Indian Rupee","minor_unit_exponent":2,"is_base":0},
+{"currency_code":"JPY","currency_name":"Japanese Yen","minor_unit_exponent":0,"is_base":0}
+]

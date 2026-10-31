@@ -1,0 +1,22 @@
+{
+  "by_assigned_role": {
+    "OPERATIONS_ANALYST": 6,
+    "RISK_COMPLIANCE_REVIEWER": 9
+  },
+  "by_issue_type": {
+    "CURRENCY_MIXED_WITHOUT_CONVERSION": 3,
+    "DOUBLE_COUNTED_CASH_FLOW": 3,
+    "FORECAST_USES_ACTUAL_AFTER_CUTOFF": 3,
+    "FX_RATE_MISSING": 3,
+    "OPENING_PLUS_LEDGER_NE_CLOSING": 3
+  },
+  "by_severity": {
+    "CRITICAL": 3,
+    "HIGH": 9,
+    "MEDIUM": 3
+  },
+  "exceptions": 15,
+  "status": {
+    "OPEN": 15
+  }
+}

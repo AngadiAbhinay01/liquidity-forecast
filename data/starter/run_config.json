@@ -1,0 +1,47 @@
+{
+  "config": {
+    "currencies": [
+      {
+        "code": "USD",
+        "is_base": true,
+        "minor_unit_exponent": 2,
+        "name": "US Dollar"
+      },
+      {
+        "code": "EUR",
+        "is_base": false,
+        "minor_unit_exponent": 2,
+        "name": "Euro"
+      },
+      {
+        "code": "GBP",
+        "is_base": false,
+        "minor_unit_exponent": 2,
+        "name": "Pound Sterling"
+      },
+      {
+        "code": "INR",
+        "is_base": false,
+        "minor_unit_exponent": 2,
+        "name": "Indian Rupee"
+      },
+      {
+        "code": "JPY",
+        "is_base": false,
+        "minor_unit_exponent": 0,
+        "name": "Japanese Yen"
+      }
+    ],
+    "date_end": "2026-12-31",
+    "date_start": "2026-01-01",
+    "forecast_horizon_days": 30,
+    "n_accounts": 18,
+    "n_entities": 6,
+    "n_forecast_items": 600,
+    "n_ledger": 3000,
+    "scale_name": "starter",
+    "seed": 20261022
+  },
+  "config_fingerprint": "8ce3c99d63b685ca689091e4a3e4d3f6ba325f8318c2db42c9178659b32bc806",
+  "generator_command": "python -m src.generate --scale starter --seed 20261022"
+}
